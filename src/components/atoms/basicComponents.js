@@ -7,13 +7,13 @@ export const Button = styled.button`
     --white: #FFFFFF;
     --gray: #676767;
     --light-gray: #67676719;
-    
-    color: ${({color})=> color === 'primary' ? 'var(--white)' 
-                        : (color === 'transparentPrimary' || color === 'secondary') ? 'var(--blue)' 
-                        : color === 'transparentSecondary' ? 'var(--gray)' 
+
+    color: ${({color})=> color === 'primary' ? 'var(--white)'
+                        : (color === 'transparentPrimary' || color === 'secondary') ? 'var(--blue)'
+                        : color === 'transparentSecondary' ? 'var(--gray)'
                         : 'var(--black)' };
     background-color: ${({color})=> color === 'primary' ? 'var(--blue)' : 'var(--white)'};
-    border: 1px solid ${({color})=> color === 'primary' ? 'var(--blue)' 
+    border: 1px solid ${({color})=> color === 'primary' ? 'var(--blue)'
                                     : color === 'secondary' ? 'var(--blue)'
                                     : (color === 'transparentPrimary' || color === 'transparentSecondary') ? 'transparent'
                                     :'var(--black)'};
@@ -25,16 +25,16 @@ export const Button = styled.button`
     text-align: center;
     padding: 12px 24px;
     cursor: pointer;
-    height: 45px;    
-    width: ${({width})=> width === 'big' ? '100%' : 
-                         width === 'medium' ? '201.5px' : 
+    height: 45px;
+    width: ${({width})=> width === 'big' ? '100%' :
+                         width === 'medium' ? '201.5px' :
                          width === 'small' ? '160px' : 'auto'};
     line-height: 17px;
     letter-spacing: 0.5px;
     box-sizing: border-box;
 
     &:hover{
-        background: ${({color})=> color === 'primary' ? 'linear-gradient(0deg, rgba(214, 21, 0, 0.08), rgba(214, 21, 0, 0.08)), var(--blue)' 
+        background: ${({color})=> color === 'primary' ? 'linear-gradient(0deg, rgba(214, 21, 0, 0.08), rgba(214, 21, 0, 0.08)), var(--blue)'
                                                     : (color === 'secondary' || color === 'transparentPrimary') ? 'var(--light-blue)'
                                                     : 'var(--light-gray)'};
         box-shadow: ${({color})=> color === 'primary' && '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 2px rgba(0, 0, 0, 0.3)'};
@@ -126,14 +126,14 @@ export const ListMenu = styled.ul`
         cursor: pointer;
     }
 
-    
+
     & li .item {
-        height: 45px;        
+        height: 45px;
         padding: 10px 0px 8.6px 0px;
         border-bottom: 1px solid #E1E1E1;
     }
 
-    & li .item .text{        
+    & li .item .text{
         display:inline-block;
     }
 `;
@@ -173,15 +173,15 @@ export const SelectList =  styled.div`
         border-radius: 8px;
         margin-top: -0.5px;
     }
-    
+
     &  > .list-absolute > ul.search-elements > li.text-result:hover {
         background: #183b860c;
     }
-    
+
     &  > .list-absolute > ul.search-elements > li.text-result.selected {
         background: #E7EAF8;
     }
-    
+
     &  > .list-absolute > ul.search-elements > li.text-result > .item {
         padding: 12px 0px 8.6px 0px;
         border-bottom: 1px solid #F6F6F6;
@@ -192,7 +192,7 @@ export const SelectList =  styled.div`
         justify-content: space-around;
         align-items: start;
     }
-    
+
     &  > .list-absolute > ul.search-elements > li.text-result:hover > .item {
         padding: 12px 0px 8.6px 0px;
         border-bottom: 1px solid transparent

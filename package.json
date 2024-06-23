@@ -5,6 +5,7 @@
   "homepage": "https://lesterpb.github.io/buscador_de_peliculas_react",
   "dependencies": {
     "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

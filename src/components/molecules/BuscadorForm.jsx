@@ -12,14 +12,14 @@ const BuscadorForm = ({resultados,setResultados}) => {
         {top_rated: [t('top_rated')]},
         {upcoming: [t('upcoming')]}];
     const [filtro,setListarFiltros,SelectorDeFiltro] = useSelect(t('place_holder_filter_movies'),'genero-select',filtrosDePeliculas,"");
-    
+
     const findMovies = useCallback(async()=>{
         console.log(resultados)
         if(resultados.length > 0){
             const peliculas = await buscarPeliculas(filtro,i18n.language);
             setResultados(peliculas.results)
         }
-    },[i18n.language])
+    },[filtro, i18n.language, resultados, setResultados])
 
     useEffect(()=>{
         findMovies();
@@ -45,5 +45,5 @@ const BuscadorForm = ({resultados,setResultados}) => {
         </form>
     );
 }
- 
+
 export default BuscadorForm;

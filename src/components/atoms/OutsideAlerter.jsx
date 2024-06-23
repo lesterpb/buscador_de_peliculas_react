@@ -5,12 +5,12 @@ import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 function OutsideAlerter(props) {
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
-  
+
     return <div ref={wrapperRef}>{props.children}</div>;
   }
-  
+
   OutsideAlerter.propTypes = {
-    children: PropTypes.element.isRequired
+    children: PropTypes.node.isRequired
   };
-  
+
   export default OutsideAlerter;

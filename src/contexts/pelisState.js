@@ -18,7 +18,7 @@ const PelisState = props => {
     }
 
     return (
-        <ProyectoContext.Provider 
+        <ProyectoContext.Provider
             value={{
                 state,
                 setLogin

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useRef } from "react";
 
+//TODO: eliminar el uso de PropTypes y comenzar a utilizar Typescript para la validacion de tipos
 /**
  * Hook that alerts clicks outside of the passed ref
  */

@@ -1,16 +1,25 @@
 .custom-card-wrap {
-    position: relative;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
     height: 600px;
     width: 100%;
-    transform-style: preserve-3d;
-    transition: transform .5s ease-in;
 }
 
-.custom-card-wrap:hover {
+.custom-card-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform .5s ease-in;
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,.1) */
+}
+
+.custom-card-wrap:hover .custom-card-inner{
     transform: rotateY(180deg);
 }
 
-.custom-card-front,.custom-card-back {
+.custom-card-front, .custom-card-back {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -19,9 +28,6 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border-radius: 8px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-    /* box-shadow: 0 2px 8px rgba(0,0,0,.1) */
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
@@ -32,9 +38,6 @@
 
 .custom-card-back {
     justify-content: space-between;
-}
-
-.custom-card-back {
     transform: rotateY(180deg);
 }
 

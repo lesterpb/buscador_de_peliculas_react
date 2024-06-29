@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Input, SelectList } from "../components/atoms/basicComponents";
 import OutsideAlerter from './useOutsideAlerter';
 
-const useSelect = (placeholder,id,options,selectedKey=undefined) => {
+const useSelectInput = (placeholder,id,options,selectedKey=undefined) => {
 
     const [selectValue,setSelectedValue] = useState("");
     const [selectKey,setSelectedKey] = useState("");
@@ -19,7 +19,6 @@ const useSelect = (placeholder,id,options,selectedKey=undefined) => {
     },[options,selectKey])
 
     const elementSelected = (elementSelectedKey,elementSelectedValue) => {
-        console.log(elementSelectedValue);
         setSelectedValue(elementSelectedValue);
         setSelectedKey(elementSelectedKey);
         setIsVisible(prevValue => !prevValue);
@@ -33,6 +32,11 @@ const useSelect = (placeholder,id,options,selectedKey=undefined) => {
         setIsVisible(prevValue => prevValue && false);
     }
 
+    const liStyles = (option, key) => `text-result ${(selectValue === option[key][0]
+        || (selectedKey !== undefined
+        && selectedKey !== ""
+        && selectKey === selectedKey)) ? "selected" : ''}`;
+
     const Select = ()=>(
         <div className='w-100'>
             <OutsideAlerter action={handleClickOutside}>
@@ -43,11 +47,8 @@ const useSelect = (placeholder,id,options,selectedKey=undefined) => {
                             { options.map((option,pos)=>{
                                     const key = Object.keys(option)[0];
                                     return (
-                                        <li key={id+"-"+pos} id={id+"-"+pos} 
-                                            className={`text-result ${(selectValue === option[key][0]
-                                                        || (selectedKey !== undefined
-                                                        && selectedKey !== ""
-                                                        && selectKey === selectedKey)) ? "selected" : ''}`}
+                                        <li key={id+"-"+pos} id={id+"-"+pos}
+                                            className='text-result'
                                             onClick={()=>elementSelected(key,option[key][0])}>
                                             <div className="item">
                                                 <span>{option[key][0]}</span>
@@ -65,5 +66,5 @@ const useSelect = (placeholder,id,options,selectedKey=undefined) => {
 
     return [selectKey,setIsVisible,Select];
 }
- 
-export default useSelect;
+
+export default useSelectInput;

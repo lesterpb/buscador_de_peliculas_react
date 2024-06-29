@@ -29,6 +29,8 @@ export const Button = styled.button`
     width: ${({width})=> width === 'big' ? '100%' :
                          width === 'medium' ? '201.5px' :
                          width === 'small' ? '160px' : 'auto'};
+    overflow: hidden;
+    text-overflow: ellipsis;
     line-height: 17px;
     letter-spacing: 0.5px;
     box-sizing: border-box;

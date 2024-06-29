@@ -1,8 +1,8 @@
-import { LOGIN_ACTION } from "./actionTypes";
+import { LOGIN_ACTION } from "./movieActionTypes";
 
-const PelisReducer = (state, action) => {
+const MovieReducer = (state, action) => {
     switch(action.type){
-        case LOGIN_ACTION: 
+        case LOGIN_ACTION:
                 return {
                         ...state,
                         login: !state.login
@@ -11,4 +11,4 @@ const PelisReducer = (state, action) => {
     }
 };
 
-export default PelisReducer;
+export default MovieReducer;

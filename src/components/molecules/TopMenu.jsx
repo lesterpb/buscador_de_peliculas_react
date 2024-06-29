@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ProyectoContext from '../../contexts/contexts';
+import { MovieContext } from '../../contexts/movieProvider';
 import OutsideAlerter from '../../hooks/useOutsideAlerter';
 import { ListMenu, NavBar } from '../atoms/basicComponents';
 
@@ -9,7 +9,7 @@ const TopMenu = ({companyName=""}) => {
     const [isVisible, setIsVisible] = useState(false);
     const { t,i18n } = useTranslation();
 
-    const {state,setLogin} = useContext(ProyectoContext);
+    const {state,setLogin} = useContext(MovieContext);
 
     const toggleMenu = () => setIsVisible(!isVisible);
 
@@ -45,7 +45,7 @@ const TopMenu = ({companyName=""}) => {
                         <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                     <ListMenu id="user_options" isVisible={isVisible}>
-                        
+
                         <li onClick={()=>changeLanguage()}>
                             <div className='item'>
                                 <span className='text'>{t('change_language')}</span>
@@ -70,14 +70,14 @@ const TopMenu = ({companyName=""}) => {
                                 { !state.login
                                     ? (
                                         <span className='text'>{t('login')}</span>
-                                    ) 
+                                    )
                                     : (
                                         <span className='text'>{t('logout')}</span>
                                     )
                                 }
                             </div>
                         </li>
-                        { !state.login 
+                        { !state.login
                             && (
                                 <li onClick={toggleMenu}>
                                     <div className='item'>
@@ -86,12 +86,12 @@ const TopMenu = ({companyName=""}) => {
                                 </li>
                             )
                         }
-                        
+
                     </ListMenu>
                 </div>
             </OutsideAlerter>
         </NavBar>
     );
 }
- 
+
 export default TopMenu;

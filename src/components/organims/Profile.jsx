@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Perfil = () => {
+const Profile = () => {
     return (
         <h1>Editar Perfil</h1>
      );
 }
- 
-export default Perfil;
+
+export default Profile;

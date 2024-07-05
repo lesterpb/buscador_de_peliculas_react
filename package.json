@@ -1,5 +1,6 @@
 {
   "name": "buscador_de_peliculas_react",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://lesterpb.github.io/buscador_de_peliculas_react",

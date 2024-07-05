@@ -32,7 +32,7 @@ const useSelectInput = (placeholder,id,options,selectedKey=undefined) => {
         setIsVisible(prevValue => prevValue && false);
     }
 
-    const liStyles = (option, key) => `text-result ${(selectValue === option[key][0]
+    const liStyles = (key, option) => `text-result ${(selectValue === option[key][0]
         || (selectedKey !== undefined
         && selectedKey !== ""
         && selectKey === selectedKey)) ? "selected" : ''}`;
@@ -48,7 +48,7 @@ const useSelectInput = (placeholder,id,options,selectedKey=undefined) => {
                                     const key = Object.keys(option)[0];
                                     return (
                                         <li key={id+"-"+pos} id={id+"-"+pos}
-                                            className='text-result'
+                                            className={liStyles(key,option)}
                                             onClick={()=>elementSelected(key,option[key][0])}>
                                             <div className="item">
                                                 <span>{option[key][0]}</span>

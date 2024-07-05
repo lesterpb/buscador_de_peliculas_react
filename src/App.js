@@ -19,7 +19,7 @@ function App() {
       <div className="d-flex justify-content-center h-100">
         <TopMenu companyName={t('title')}/>
         <div className="mx-5 w-100 mt-6">
-          <Router basename="/">
+          <Router basename="/buscador_de_peliculas_react">
             <Routes>
                 <Route path="/" element={<Finder/>}/>
                 <Route path="/{id}" element={<MovieDetails />}/>

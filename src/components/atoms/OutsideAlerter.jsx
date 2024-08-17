@@ -4,7 +4,7 @@ import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 
 function OutsideAlerter(props) {
     const wrapperRef = useRef(null);
-    useOutsideAlerter(wrapperRef);
+    useOutsideAlerter(wrapperRef,props.action);
 
     return <div ref={wrapperRef}>{props.children}</div>;
   }

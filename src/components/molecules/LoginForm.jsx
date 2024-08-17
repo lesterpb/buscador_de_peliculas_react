@@ -2,18 +2,15 @@ import React from 'react';
 import { Button, Input } from '../atoms/basicComponents';
 
 const LoginForm = () => {
-    return ( 
+    return (
         <form>
-            <Input placeholder='Nombre'/>
             <Input placeholder='Email'/>
-            <Input placeholder='Teléfono'/>
             <Input placeholder='Contraseña' type="password"/>
-            <Input placeholder='Confirmar contraseña' type="password"/>
             <Button type='submit' color='primary'>
-                Registrar
+                Login
             </Button>
-        </form> 
+        </form>
     );
 }
- 
+
 export default LoginForm;

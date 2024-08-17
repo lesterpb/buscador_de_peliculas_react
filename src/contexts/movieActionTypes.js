@@ -1,1 +1,2 @@
 export const LOGIN_ACTION = "LOGIN_ACTION";
+export const SET_MOVIES_FILTER = "SET_MOVIES_FILTER";

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MovieContext } from '../../contexts/movieProvider';
-import OutsideAlerter from '../../hooks/useOutsideAlerter';
+import OutsideAlerter from '../atoms/OutsideAlerter';
 import { ListMenu, NavBar } from '../atoms/basicComponents';
 
 const TopMenu = ({companyName=""}) => {
@@ -14,9 +14,7 @@ const TopMenu = ({companyName=""}) => {
     const toggleMenu = () => setIsVisible(!isVisible);
 
     const changeLanguage = () => {
-        console.log(i18n.language );
         i18n.language === "es-ES" ? i18n.changeLanguage("en-US") : i18n.changeLanguage("es-ES");
-        console.log(i18n.language );
         toggleMenu();
     }
 

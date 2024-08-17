@@ -6,12 +6,11 @@ import styles from "./card.module.css";
 
 const MovieCard = ({movieInfo,className}) => {
     const { t } = useTranslation();
-
-    const handleMore = ()=>{
+     const handleMore = ()=>{
         //TODO: redireccionar a otra vista donde se muestre la sinopsis completa de la pelicula y tenga un Slider con los Poster de la peli
     }
 
-    return (
+    return movieInfo && (
         <div className={className}>
             <div className={styles["custom-card-wrap"]}>
                 <div className={styles["custom-card-inner"]}>

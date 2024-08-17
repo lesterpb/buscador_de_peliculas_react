@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Input, SelectList } from "../components/atoms/basicComponents";
-import OutsideAlerter from './useOutsideAlerter';
+
+//TODO: eliminar esta dependencia para mantenerlo desacoplado el custom hook
+import OutsideAlerter from '../components/atoms/OutsideAlerter';
 
 const useSelectInput = (placeholder,id,options,selectedKey=undefined) => {
 
@@ -49,7 +51,7 @@ const useSelectInput = (placeholder,id,options,selectedKey=undefined) => {
                                     return (
                                         <li key={id+"-"+pos} id={id+"-"+pos}
                                             className={liStyles(key,option)}
-                                            onClick={()=>elementSelected(key,option[key][0])}>
+                                            onMouseDown={()=>elementSelected(key,option[key][0])}>
                                             <div className="item">
                                                 <span>{option[key][0]}</span>
                                             </div>

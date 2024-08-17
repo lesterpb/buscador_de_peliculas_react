@@ -1,12 +1,13 @@
 import React, { createContext, useReducer } from 'react';
-import { LOGIN_ACTION } from './movieActionTypes';
+import { LOGIN_ACTION, SET_MOVIES_FILTER } from './movieActionTypes';
 import MovieReducer from './movieReducer';
 
 export const MovieContext = createContext();
 
 const MovieProvider = ({children}) => {
     const initialState = {
-        login:false
+        login:false,
+        moviesFilter: '',
     }
 
     // Dispatch para ejecutar las acciones
@@ -16,13 +17,21 @@ const MovieProvider = ({children}) => {
         dispatch({
             type: LOGIN_ACTION
         })
-    }
+    };
+
+    const setMoviesFilter = filter => {
+        dispatch({
+            type: SET_MOVIES_FILTER,
+            payload: filter
+        })
+    };
 
     return (
         <MovieContext.Provider
             value={{
                 state,
-                setLogin
+                setLogin,
+                setMoviesFilter
             }}
         >
             {children}
